@@ -1,0 +1,11 @@
+version: '3'
+services:
+  front_app:
+    build: .
+    container_name: task_vue
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    stdin_open: true
+    tty: true
