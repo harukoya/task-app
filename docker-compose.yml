@@ -1,11 +1,38 @@
 version: '3'
 services:
   front_app:
-    build: .
+    build: ./front
     container_name: task_vue
     volumes:
-      - .:/app
+      - ./front:/app
     ports:
       - 8080:8080
     stdin_open: true
     tty: true
+    command: npm run serve
+  api_app:
+    build: ./api
+    container_name: task_api
+    volumes:
+      - ./api:/app
+      - bundle:/usr/local/bundle
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+    command: /bin/bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+  db:
+    image: mysql:5.7
+    container_name: task_db
+    volumes:
+      - db-volume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 3307:3306
+
+volumes:
+  bundle:
+  db-volume:
