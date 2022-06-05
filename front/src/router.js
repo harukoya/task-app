@@ -1,26 +1,26 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
-import Login from './views/Login.vue';
-import Task from './views/Task.vue';
+import KbnHome from './components/templates/KbnHome.vue';
+import KbnLogin from './components/templates/KbnLogin.vue';
+import KbnTask from './components/templates/KbnTask.vue';
 
 Vue.use(Router);
 
 const routes = [
   {
     path: '/',
-    component: Home,
-    name: 'Home'
+    component: KbnHome,
+    name: 'KbnHome'
   },
   {
     path: '/login',
-    component: Login,
-    name: 'Login'
+    component: KbnLogin,
+    name: 'KbnLogin'
   },
   {
     path: '/tasks',
-    component: Task,
-    name: 'Task'
+    component: KbnTask,
+    name: 'KbnTask'
   },
 ];
 
