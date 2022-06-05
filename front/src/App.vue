@@ -1,9 +1,22 @@
 <template>
   <div>
-    <div id="trello-header" class="h-12 p-2">
-      <h1 class="text-sm font-bold">Trello風タスク管理</h1>
+    <nav class="bg-purple-900 text-white flex justify-between">
+      <h1 class="px-3 py-4 text-2xl font-bold">Trello風タスク管理</h1>
+      <ul class="px-10 py-4 flex space-x-3 text-xl">
+        <li class="cursor-pointer">
+          <router-link to="/">Home</router-link>
+        </li>
+        <li class="cursor-pointer">
+          <router-link to="/login">Login</router-link>
+        </li>
+        <li class="cursor-pointer">
+          <router-link to="/tasks">Task</router-link>
+        </li>
+      </ul>
+    </nav>
+    <div class="container mx-auto">
+      <router-view></router-view>
     </div>
-    <router-view></router-view>
   </div>
 </template>
 
