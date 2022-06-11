@@ -3,6 +3,7 @@ import KbnButton from '../components/atoms/KbnButton.vue';
 export default {
   title: 'Atoms/KbnButton',
   component: KbnButton,
+  argTypes: { handleClick: { action: true } }
 };
 
 const Template = (args, {argTypes}) => ({
