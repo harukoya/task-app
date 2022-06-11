@@ -3,13 +3,6 @@ import KbnButton from '../components/atoms/KbnButton.vue';
 export default {
   title: 'Atoms/KbnButton',
   component: KbnButton,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-    size: {
-      control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
-    },
-  },
 };
 
 const Template = (args, {argTypes}) => ({
