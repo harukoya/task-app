@@ -25,12 +25,18 @@ export default {
     classes() {
       if (this.type === 'text') {
         return [
-          'border-none'
+          'border-none underline p-1'
         ]
       } else {
-        return [
-          'border-2 border-green-500'
-        ]
+        if (this.disabled != true) {
+          return [
+            'text-white border-2 border-green-500 bg-green-500 rounded p-1'
+          ]
+        } else {
+          return [
+            'text-white border-2 border-gray-500 bg-gray-500 rounded p-1'
+          ]
+        }
       }
     }
   },
