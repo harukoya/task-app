@@ -10,6 +10,9 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^2.0.8",
     "@storybook/addon-postcss": "^2.0.0",
     "core-js": "^3.8.3",
     "vue": "^2.6.14",
