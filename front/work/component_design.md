@@ -141,22 +141,6 @@
 
     なし
 
-- KbnTaskCategoryAddForm.vue
-
-  - プロパティ
-
-    なし
-
-  - イベント
-
-    | イベント | 説明                                             |
-    | -------- | ------------------------------------------------ |
-    | add      | タスクカテゴリの追加ボタンをクリックした際に発火 |
-
-  - スロット
-
-    なし
-
 - KbnTaskDetailForm.vue
 
   - プロパティ
@@ -230,22 +214,6 @@
   - スロット
 
 - KbnTaskBoardView.vue
-
-  - プロパティ
-
-  - イベント
-
-  - スロット
-
-- KbnTaskAddModal.vue
-
-  - プロパティ
-
-  - イベント
-
-  - スロット
-
-- KbnTaskCategoryAddModal.vue
 
   - プロパティ
 
