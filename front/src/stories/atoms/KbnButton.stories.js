@@ -1,4 +1,4 @@
-import KbnButton from '../components/atoms/KbnButton.vue';
+import KbnButton from '../../components/atoms/KbnButton.vue';
 
 export default {
   title: 'Atoms/KbnButton',

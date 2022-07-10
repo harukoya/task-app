@@ -1,4 +1,4 @@
-import KbnIcon from '../components/atoms/KbnIcon.vue';
+import KbnIcon from '../../components/atoms/KbnIcon.vue';
 
 export default {
   title: 'Atoms/KbnIcon',
