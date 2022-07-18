@@ -2,7 +2,6 @@
   <button
     :class="classes"
     :disabled="disabled"
-    type="button"
     @click="handleClick"
   >
     <slot />
@@ -12,7 +11,7 @@
 <script>
 export default {
   props: {
-    type: {
+    btnType: {
       type: String,
       default: 'button'
     },
@@ -23,7 +22,7 @@ export default {
   },
   computed: {
     classes() {
-      if (this.type === 'text') {
+      if (this.btnType === 'text') {
         return [
           'border-none underline p-1'
         ]

@@ -10,7 +10,8 @@ const state = {
   auth: {
     token: null,
     client: null,
-    uid: null
+    uid: null,
+    expiry: null
   },
   board: {
     lists: []

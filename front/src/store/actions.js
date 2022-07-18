@@ -1,8 +1,13 @@
-import {Auth, List, Task} from '../api'
+import * as types from './mutation-types'
+import { Auth, List, Task } from '../api'
 
 export default {
-  login({ commit }, authInfo) {
-    throw new Error('login action should be implemented')
+  login: ({ commit }, authInfo) => {
+    return Auth.login(authInfo)
+      .then(({token, client, uid, expiry}) => {
+        commit(types.AUTH_LOGIN, {token, client, uid, expiry})
+      })
+      .catch(err => { throw err })
   },
   fetchLists({ commit }) {
     throw new Error("fetchLists should be implemented")

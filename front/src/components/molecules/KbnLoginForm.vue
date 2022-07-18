@@ -33,8 +33,7 @@
         </ul>
       </div>
       <KbnButton
-        type="button"
-        disabled="disableLoginAction"
+        :disabled="disableLoginAction"
         @click="handleClick"
         class="block"
       >
