@@ -11,7 +11,7 @@
 <script>
 export default {
   props: {
-    btnType: {
+    type: {
       type: String,
       default: 'button'
     },
@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     classes() {
-      if (this.btnType === 'text') {
+      if (this.type === 'text') {
         return [
           'border-none underline p-1'
         ]

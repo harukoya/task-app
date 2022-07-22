@@ -1,6 +1,8 @@
 <template>
   <div>
-    <KbnBoardNavigation />
+    <KbnBoardNavigation @click="userRegistration">
+      ユーザ登録
+    </KbnBoardNavigation>
     <KbnLoginForm :onlogin="handleLogin" />
   </div>
 </template>
@@ -22,7 +24,10 @@ export default {
         })
         .catch(error => this.throwReject(error))
     },
-    throwReject (error) { return Promise.reject(error) }
+    throwReject (error) { return Promise.reject(error) },
+    userRegistration() {
+      console.log('aaa')
+    }
   }
 }
 </script>
