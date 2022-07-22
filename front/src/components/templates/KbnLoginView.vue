@@ -26,7 +26,7 @@ export default {
     },
     throwReject (error) { return Promise.reject(error) },
     userRegistration() {
-      console.log('aaa')
+      this.$router.push({ path: '/sign_up' })
     }
   }
 }

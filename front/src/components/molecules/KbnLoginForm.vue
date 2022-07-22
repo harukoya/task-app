@@ -1,5 +1,5 @@
 <template>
-  <form class="max-w-lg border rounded-lg mx-auto">
+  <form class="max-w-lg border rounded-lg mx-auto mt-10">
     <div class="flex flex-col gap-4 p-4 md:p-8">
       <div>
         <label for="email" class="inline-block text-gray-800 text-sm sm:text-base mb-2">メールアドレス</label>  
