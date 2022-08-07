@@ -28,6 +28,6 @@ export default {
     userRegistration() {
       this.$router.push({ path: '/sign_up' })
     }
-  }
+  },
 }
 </script>

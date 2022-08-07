@@ -45,6 +45,7 @@
         >
         <ul class="validation-errors">
           <li v-if="!validation.password.required">パスワードを入力してください。</li>
+          <li v-if="!validation.password.length">パスワードは{{ PASSWORD_LENGTH }}文字以上にしてください。</li>
         </ul>
       </div>
       <div>
@@ -90,6 +91,7 @@ import KbnButton from "../atoms/KbnButton.vue"
 import { REGEX_EMAIL } from "@/module/EmailValidater"
 
 const required = val => !!val.trim()
+const PASSWORD_LENGTH = 6
 
 export default {
   components: {
@@ -108,7 +110,8 @@ export default {
       password: '',
       password_confirmation: '',
       error: '',
-      progress: false
+      progress: false,
+      PASSWORD_LENGTH
     }
   },
   computed: {
@@ -122,7 +125,8 @@ export default {
           format: REGEX_EMAIL.test(this.email)
         },
         password: {
-          required: required(this.password)
+          required: required(this.password),
+          length: this.password.length >= PASSWORD_LENGTH
         },
         password_confirmation: {
           required: required(this.password_confirmation),
