@@ -1,6 +1,9 @@
 <template>
   <form class="max-w-lg border rounded-lg mx-auto mt-10">
     <div class="flex flex-col gap-4 p-4 md:p-8">
+      <p v-if="noticeMessage">
+        {{ noticeMessage }}
+      </p>
       <div>
         <label for="email" class="inline-block text-gray-800 text-sm sm:text-base mb-2">メールアドレス</label>  
         <input 
@@ -68,14 +71,14 @@ export default {
     onlogin: {
       type: Function,
       required: true
-    }
+    },
   },
   data() {
     return {
       email: '',
       password: '',
       progress: false,
-      error: ''
+      error: '',
     }
 
   },
@@ -104,6 +107,11 @@ export default {
     },
     disableLoginAction() {
       return !this.valid || this.progress
+    },
+    noticeMessage() {
+      const message = this.$store.getters.getNoticeMessage
+      this.$store.dispatch('clearNoticeMessage')
+      return message
     }
   },
   methods: {
@@ -126,7 +134,7 @@ export default {
           })
       })
     }
-  }
+  },
 }
 
 </script>

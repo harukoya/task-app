@@ -15,6 +15,10 @@ const state = {
   },
   board: {
     lists: []
+  },
+  message: {
+    notice: '',
+    error: ''
   }
 }
 

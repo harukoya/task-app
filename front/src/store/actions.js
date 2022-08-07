@@ -23,5 +23,11 @@ export default {
   },
   logout({commit}, authInfo) {
     throw new Error("logout action should be implemented")
+  },
+  setMessage({ commit }, message) {
+    commit(types.MESSAGE, message)
+  },
+  clearNoticeMessage({commit}) {
+    commit(types.CLEAR_NOTICE_MESSAGE)
   }
 }

@@ -25,10 +25,12 @@ export default {
     handleUserRegistration(userInfo) {
       return user_api.signUp(userInfo)
         .then((res) => {
-          this.$router.push({ path: '/login', params: { name: res.name, email: res.email } })
+          this.$router.push({ path: '/login' })
+          this.$store.dispatch('setMessage', { notice: `${res.email}に届いたメールにてメールアドレスの認証をお願いします`})
         })
         .catch(error => {
           console.log(error)
+          this.$store.dispatch('setMessage', { error })
         })
 
     }

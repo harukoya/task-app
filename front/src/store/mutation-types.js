@@ -1,1 +1,3 @@
-export const AUTH_LOGIN='AUTH_LOGIN'
+export const AUTH_LOGIN = 'AUTH_LOGIN'
+export const MESSAGE = 'MESSAGE'
+export const CLEAR_NOTICE_MESSAGE = "CLEAR_NOTICE_MESSAGE"
