@@ -13,7 +13,15 @@ export default {
   props: {
     icon: {
       type: String,
-      required: true
+      required: true,
+      validator: function (value) {
+        return [
+          'fa-plus',
+          'fa-circle-plus',
+          'fa-xmark',
+          'fa-circle-xmark'
+        ].indexOf(value) !== -1
+      }
     },
   },
   methods: {

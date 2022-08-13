@@ -9,5 +9,15 @@ export default {
   },
   [types.CLEAR_NOTICE_MESSAGE](state) {
     state.message.notice = ''
+  },
+  [types.ADD_TASK](state, payload) {
+    const task = payload
+    for (let i = 0; i < state.board.lists.length; i++) {
+      const list = state.board.lists[i]
+      if (list.id === task.listId) {
+        list.items.push(task)
+        break
+      }
+    }
   }
 }
