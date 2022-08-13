@@ -26,16 +26,28 @@ export default {
       .catch(err => { throw err })
   },
 
-  updateTask({commit}, taskInfo) {
-    throw new Error("updateTask action should be implemented")
+  updateTask: ({commit, state}, task) => {
+    return Task.update(state.auth.token, task)
+      .then(() => {
+        commit(types.UPDATE_TASK, task)
+      })
+      .catch(err => { throw err })
   },
 
-  removeTask({commit}, removeTask) {
-    throw new Error("removeTask action should be implemented")
+  removeTask: ({commit, state}, {id, listId}) => {
+    return Task.remove(state.auth.token, { id, listId })
+      .then(() => {
+        commit(types.REMOVE_TASK, { id, listId })
+      })
+      .catch(err => { throw err })
   },
 
-  logout({commit}, authInfo) {
-    throw new Error("logout action should be implemented")
+  logout: ({commit, state}) => {
+    return Auth.logout(state.auth.token)
+      .then(() => {
+        commit(types.AUTH_LOGOUT, { token: null, expiry: null})
+      })
+      .catch(err => { throw err })
   },
 
   setMessage({ commit }, message) {

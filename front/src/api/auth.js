@@ -9,5 +9,15 @@ export default {
           reject(new Error(err.response.data.message || err.message ))
         })
     })
+  },
+
+  logout: token => {
+    return new Promise((resolve, reject) => {
+      client.delete(`/auth/sign_out`, { headers: { Authorization: `Bearer ${token}`}})
+        .then(() => resolve())
+        .catch(err => {
+          reject(new Error(err.response.data.message || err.message))
+        })
+    })
   }
 }
