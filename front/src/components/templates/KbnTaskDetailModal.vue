@@ -49,7 +49,7 @@ export default {
           this.back()
         })
         .catch(err => Promise.reject(err))
-    }
+    },
   }
 }
 </script>

@@ -53,8 +53,38 @@ export default {
     }
   },
 
+  [types.MOVE_TASK_FROM](state, payload) {
+    const {target, from} = payload
+    state.dragging.target = target
+    state.dragging.from = from
+  },
+
+  [types.MOVE_TO_TASK](state, payload) {
+    const {target, to} = payload
+    state.dragging.target = target
+    state.dragging.to = to
+  },
+
+  [types.MOVE_TASK_DONE](state, payload) {
+    const {target, from, to} = payload
+    const getTaskList = (lists, id) => lists.find(list => list.id === id)
+
+    state.dragging.target = null
+    state.dragging.from = null
+    state.dragging.to = null
+
+    const fromTaskList = getTaskList(state.board.lists, from)
+    const index = fromTaskList.items.findIndex(item => item.id === target)
+    const task = fromTaskList.items[index]
+    fromTaskList.items.splice(index, 1)
+
+    task.listId = to
+
+    const toTaskList = getTaskList(state.board.lists, to)
+    toTaskList.items.push(task)
+  },
+
   [types.AUTH_LOGOUT](state, payload) {
     state.auth = payload
   }
-
 }

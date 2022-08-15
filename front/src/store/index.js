@@ -17,6 +17,11 @@ const state = {
   message: {
     notice: '',
     error: ''
+  },
+  dragging: {
+    target: null,
+    from: null,
+    to: null
   }
 }
 

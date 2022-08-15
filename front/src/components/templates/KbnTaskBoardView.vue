@@ -14,8 +14,8 @@
 
 <script>
 import { mapState } from 'vuex'
-import KbnBoardNavigation from '@/componenets/molecules/KbnBoardNavigation'
-import KbnTaskBoard from '@/organisms/KbnTaskBoard'
+import KbnBoardNavigation from '@/components/molecules/KbnBoardNavigation.vue'
+import KbnTaskBoard from '@/components/organisms/KbnTaskBoard.vue'
 
 export default {
   componenets: {
