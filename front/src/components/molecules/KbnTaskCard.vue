@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      {{ taskName }}
+      {{ name }}
       <KbnIcon
         icon="fa-xmark"
         @click="$emit('click')"
@@ -19,7 +19,7 @@ export default {
     KbnIcon,
   },
   props: {
-    taskName: {
+    name: {
       type: String,
       required: true
     }

@@ -5,6 +5,7 @@ export default {
   login: ({ commit }, authInfo) => {
     return Auth.login(authInfo)
       .then(({token, expiry}) => {
+        localStorage.setItem('token', token)
         commit(types.AUTH_LOGIN, {token, expiry})
       })
       .catch(err => { throw err })
@@ -64,6 +65,7 @@ export default {
   logout: ({commit, state}) => {
     return Auth.logout(state.auth.token)
       .then(() => {
+        localStorage.removeItem('token')
         commit(types.AUTH_LOGOUT, { token: null, expiry: null})
       })
       .catch(err => { throw err })

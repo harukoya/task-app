@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :test, only: %i[index]
       resources :tasks
+      resources :task_lists, only: %i[index]
 
       mount_devise_token_auth_for 'User', at: 'auth', controllers: {
         sessions: 'custom/sessions'

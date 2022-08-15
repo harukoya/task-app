@@ -18,7 +18,7 @@ import KbnBoardNavigation from '@/components/molecules/KbnBoardNavigation.vue'
 import KbnTaskBoard from '@/components/organisms/KbnTaskBoard.vue'
 
 export default {
-  componenets: {
+  components: {
     KbnBoardNavigation,
     KbnTaskBoard
   },
@@ -28,11 +28,9 @@ export default {
       message: ''
     }
   },
-  computed: {
-    mapState: {
-      lists: state => state.board.lists
-    }
-  },
+  computed: mapState({
+    lists: state => state.board.lists
+  }),
   created () {
     this.loadLists()
   },

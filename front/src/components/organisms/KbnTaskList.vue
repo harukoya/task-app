@@ -7,7 +7,7 @@
     <ul class="task-list-items">
       <draggable
           v-model="draggableItems"
-          :options="{ group: 'items' }"
+          :options="{ group: 'tasks' }"
           @change="handleChange"
           @end="handleEnd"
       >
@@ -53,7 +53,7 @@ export default {
       type: String,
       required: true
     },
-    items: {
+    tasks: {
       type: Array,
       default: () => []
     }
@@ -65,7 +65,7 @@ export default {
   },
   computed: {
     draggableItems: {
-      get() { return this.items },
+      get() { return this.tasks },
       set (value) {}
     },
     ...mapState({

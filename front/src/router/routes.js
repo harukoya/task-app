@@ -8,11 +8,13 @@ export default [
     path: '/',
     component: KbnTaskBoardView,
     meta: { requiresAuth: true },
-  },
-  {
-    path: '/tasks/:id',
-    component: KbnTaskDetailModal,
-    meta: { requiresAuth: true },
+    children: [
+      {
+        path: '/task/:id',
+        component: KbnTaskDetailModal,
+        meta: { requiresAuth: true }
+      }
+    ]
   },
   {
     path: '/login',

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="title">
-      <h2>{{ taskListHeaderName }}</h2>
+      <h2>{{ name }}</h2>
     </div>
     <div class="plusIcon">
       <KbnIcon 
@@ -21,7 +21,7 @@ export default {
     KbnIcon,
   },
   props: {
-    taskListHeaderName: {
+    name: {
       type: String,
       required: true
     }
